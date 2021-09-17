@@ -24,14 +24,16 @@ Route::group(['prefix' => 'v1' ], function () {
     Route::get('products/all', [ProductController::class, 'all']);
     Route::get('product/search', [ProductController::class, 'search']);
 
+    Route::resource('products', ProductController::class);
+
     Route::group(['middleware' => 'auth:api'], function() {
     	# Auth Routes
         Route::post('logout', [AuthController::class, 'logout']);
         Route::post('refresh', [AuthController::class, 'refresh']);
         Route::get('profile', [AuthController::class, 'profile']);
         # Product Routes
-	    Route::resource('products', ProductController::class);
-        Route::get('products/{id}', [ProductController::class, 'show']);
+	    // Route::resource('products', ProductController::class);
+        // Route::get('products/{id}', [ProductController::class, 'show']);
         Route::get('product/search-my-store', [ProductController::class, 'searchMyStore']);
 	});
 
