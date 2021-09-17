@@ -49,7 +49,8 @@ class ProductRepository implements ApiCrudInterface{
 
 
     public function create(array $data) {
-        $data['user_id'] = auth()->guard()->user()->id;
+        // $data['user_id'] = auth()->guard()->user()->id;
+        $data['user_id'] = 1;
 
         // upload image file
         if(isset($data['image'])) {
