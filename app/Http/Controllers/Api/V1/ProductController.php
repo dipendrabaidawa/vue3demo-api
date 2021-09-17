@@ -53,13 +53,12 @@ class ProductController extends Controller
             return ['like' => $request->file('image')];
         }
         return $request->all();*/
-        // try {
-        //     $data = $this->productRepository->create($request->all());
-        //     return self::apiResponseSuccess($data, 'New Product Added!');
-        // } catch (\Exception$e) {
-        //     return self::apiServerError($e->getMessage());
-        // }
-        return self::apiResponseSuccess("Hello I am here", 'New Product Added!');
+        try {
+            $data = $this->productRepository->create($request->all());
+            return self::apiResponseSuccess($data, 'New Product Added!');
+        } catch (\Exception$e) {
+            return self::apiServerError($e->getMessage());
+        }
     }
 
     /**
