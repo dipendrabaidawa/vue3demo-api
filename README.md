@@ -12,15 +12,7 @@ php artisan serve
 ```
 
 ### Dummy Credentials for user:
-email: test@example.com
+```
+email: andrei@provensolution.com
 password: 123456
-
-## API Documentation
-Postman API Documentation: https://documenter.getpostman.com/view/11223504/Tz5jffsv
-
-1. Login with given credentials or you can register
-2. Set bearer token as Authorization header
-3. Hit API
-
-Test on postman,
-<img src="https://github.com/RakibDevs/laravel-product-crud-api/blob/master/public/postman%20api.jpg">
+```
